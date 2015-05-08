@@ -1,8 +1,8 @@
 # SwiftRecord [![CocoaPod][pd-bdg]][pd] [![Build Status][ci-bdg]][ci]
-[pd-bdg]: https://img.shields.io/cocoapods/v/ObjectiveRecord.svg
+[pd-bdg]: https://img.shields.io/cocoapods/v/SwiftRecord.svg
 [pd]: http://cocoadocs.org/docsets/ObjectiveRecord
-[ci-bdg]: https://travis-ci.org/supermarin/ObjectiveRecord.svg
-[ci]: https://travis-ci.org/supermarin/ObjectiveRecord
+[ci-bdg]: https://travis-ci.org/arkverse/SwiftRecord.svg
+[ci]: https://travis-ci.org/arkverse/SwiftRecord
 
 ActiveRecord style Core Data object management. Tremendously convenient and easy to use. Necessary for any and every Core Data project.
 
