@@ -1,32 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <FileRef
+      location = "group:SwiftRecord/SwiftRecord.xcodeproj">
+   </FileRef>
    <Group
       location = "group:Example-iOS"
       name = "Example-iOS">
       <FileRef
          location = "group:SwiftRecordExample/SwiftRecordExample.xcodeproj">
-      </FileRef>
-   </Group>
-   <Group
-      location = "group:SwiftRecord"
-      name = "SwiftRecord">
-      <FileRef
-         location = "group:SwiftRecord.swift">
-      </FileRef>
-   </Group>
-   <Group
-      location = "group:iOS"
-      name = "iOS">
-      <FileRef
-         location = "group:SwiftRecord/SwiftRecord.xcodeproj">
-      </FileRef>
-   </Group>
-   <Group
-      location = "group:Mac"
-      name = "Mac">
-      <FileRef
-         location = "group:SwiftRecord/SwiftRecord.xcodeproj">
       </FileRef>
    </Group>
 </Workspace>

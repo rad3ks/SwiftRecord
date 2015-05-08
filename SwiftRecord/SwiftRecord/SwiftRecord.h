@@ -2,11 +2,11 @@
 //  SwiftRecord.h
 //  SwiftRecord
 //
-//  Created by Zaid on 5/7/15.
+//  Created by Zaid on 5/8/15.
 //  Copyright (c) 2015 ark. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#import <UIKit/UIKit.h>
 
 //! Project version number for SwiftRecord.
 FOUNDATION_EXPORT double SwiftRecordVersionNumber;
