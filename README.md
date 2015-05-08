@@ -1,8 +1,6 @@
-# SwiftRecord [![CocoaPod][pd-bdg]][pd] [![Build Status][ci-bdg]][ci]
+# SwiftRecord [![CocoaPod][pd-bdg]][pd] [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [pd-bdg]: https://img.shields.io/cocoapods/v/SwiftRecord.svg
 [pd]: http://cocoadocs.org/docsets/ObjectiveRecord
-[ci-bdg]: https://travis-ci.org/arkverse/SwiftRecord.svg
-[ci]: https://travis-ci.org/arkverse/SwiftRecord
 
 ActiveRecord style Core Data object management. Tremendously convenient and easy to use. Necessary for any and every Core Data project.
 
@@ -16,7 +14,7 @@ Easy creates, saves, deletes and queries. Do it using:
 
 This library also reads in your json dictionaries for you. Includes automatic camelCase changing ie `first_name` from server to `firstName` locally. You can customize the dictionary mappings too. Read more in the [mapping section](#mapping). 
 
-Object relationships are also generated from dictionaries, but disabled by default. Set `SwiftRecord.generateRelationships` to true to enable this feature. See the [relationships](#relationships) section
+Object relationships are also generated from dictionaries, but disabled by default. Set `SwiftRecord.generateRelationships` to true to enable this feature. See the [relationships section](#relationships)
 
 ## Installation
 
