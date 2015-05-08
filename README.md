@@ -29,6 +29,11 @@ Object relationships are also generated from dictionaries, but disabled by defau
 
 #### via Carthage
 
+1. Just add SwiftRecord to your Cartfile:
+
+	github "arkverse/SwiftRecord" >= 0.0.1
+	
+2. and run `carthage update`
 
 #### Manual Installation
 Drag and drop either `Classes/SwiftRecord.swift` or `SwiftRecord.framework` into your project
