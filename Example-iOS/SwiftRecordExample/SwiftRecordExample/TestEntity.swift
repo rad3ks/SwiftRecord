@@ -18,5 +18,9 @@ class TestEntity: NSManagedObject {
     @NSManaged var float: NSNumber
     @NSManaged var relationship: TestEntityRelationship
     @NSManaged var relationships: NSSet
+    
+    override class func mappings() -> [String:String] {
+        return [String:String]()
+    }
 
 }

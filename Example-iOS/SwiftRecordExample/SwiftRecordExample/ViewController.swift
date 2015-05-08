@@ -34,10 +34,13 @@ class ViewController: UIViewController {
             let e = er as! TestEntityRelationship
             println(e.string)
         }
-        
         test2.save()
         test2.delete()
-        
+        let dq = "date < %@"
+        println("Date Query Count: \(TestEntity.query(dq, args: NSDate()).count)")
+        let q = ["string":"testString"]
+        println("Query count: \(TestEntity.query(q).count)")
+        TestEntity.all(sort: "date ASC, integer DESC")
     }
 
     override func didReceiveMemoryWarning() {

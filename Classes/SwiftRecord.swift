@@ -31,6 +31,12 @@ public class CoreDataManager {
         }
         set {
             _databaseName = newValue
+            if _managedObjectContext != nil {
+                _managedObjectContext = nil
+            }
+            if _persistentStoreCoordinator != nil {
+                _persistentStoreCoordinator = nil
+            }
         }
     }
     private var _databaseName: String?
@@ -45,18 +51,29 @@ public class CoreDataManager {
         }
         set {
             _modelName = newValue
+            if _managedObjectContext != nil {
+                _managedObjectContext = nil
+            }
+            if _persistentStoreCoordinator != nil {
+                _persistentStoreCoordinator = nil
+            }
         }
     }
     private var _modelName: String?
     
     public var managedObjectContext: NSManagedObjectContext {
-        if let context = _managedObjectContext {
-            return context
-        } else {
-            let c = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.MainQueueConcurrencyType)
-            c.persistentStoreCoordinator = persistentStoreCoordinator
-            _managedObjectContext = c
-            return c
+        get {
+            if let context = _managedObjectContext {
+                return context
+            } else {
+                let c = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.MainQueueConcurrencyType)
+                c.persistentStoreCoordinator = persistentStoreCoordinator
+                _managedObjectContext = c
+                return c
+            }
+        }
+        set {
+            _managedObjectContext = newValue
         }
     }
     private var _managedObjectContext: NSManagedObjectContext?
@@ -151,16 +168,16 @@ public extension NSManagedObject {
         return self.all(context: NSManagedObjectContext.defaultContext)
     }
     
-    public static func all(#order: AnyObject) -> [NSManagedObject] {
-        return self.all(context: NSManagedObjectContext.defaultContext, withOrder:order)
+    public static func all(#sort: AnyObject) -> [NSManagedObject] {
+        return self.all(context: NSManagedObjectContext.defaultContext, withSort:sort)
     }
     
     public static func all(#context: NSManagedObjectContext) -> [NSManagedObject] {
-        return self.all(context: context, withOrder: nil)
+        return self.all(context: context, withSort: nil)
     }
     
-    public static func all(#context: NSManagedObjectContext, withOrder order: AnyObject?) -> [NSManagedObject] {
-        return self.fetch(nil, context: context, order: order, limit: nil)
+    public static func all(#context: NSManagedObjectContext, withSort sort: AnyObject?) -> [NSManagedObject] {
+        return self.fetch(nil, context: context, sort: sort, limit: nil)
     }
     
     public static func findOrCreate(properties: [String:AnyObject]) -> NSManagedObject {
@@ -179,7 +196,7 @@ public extension NSManagedObject {
     }
     
     public static func find(condition: AnyObject, context: NSManagedObjectContext) -> NSManagedObject? {
-        return self.query(condition, context: context, order:nil, limit:1).first
+        return self.query(condition, context: context, sort:nil, limit:1).first
     }
     
     public static func query(condition: AnyObject, args: AnyObject...) -> [NSManagedObject] {
@@ -187,32 +204,48 @@ public extension NSManagedObject {
         return self.query(predicate, context:NSManagedObjectContext.defaultContext)
     }
     
-    public static func query(condition: AnyObject, order: AnyObject) -> [NSManagedObject] {
-        return self.query(condition, context: NSManagedObjectContext.defaultContext, order: order)
+    public static func query(condition: AnyObject, sort: AnyObject) -> [NSManagedObject] {
+        return self.query(condition, context: NSManagedObjectContext.defaultContext, sort: sort)
     }
     
     public static func query(condition: AnyObject, limit: Int) -> [NSManagedObject] {
-        return self.query(condition, context: NSManagedObjectContext.defaultContext, order:nil, limit: limit)
+        return self.query(condition, context: NSManagedObjectContext.defaultContext, sort:nil, limit: limit)
     }
     
-    public static func query(condition: AnyObject, order: AnyObject, limit: Int) -> [NSManagedObject] {
-        return self.query(condition, context: NSManagedObjectContext.defaultContext, order: order, limit: limit)
+    public static func query(condition: AnyObject, sort: AnyObject, limit: Int) -> [NSManagedObject] {
+        return self.query(condition, context: NSManagedObjectContext.defaultContext, sort: sort, limit: limit)
     }
     
     public static func query(condition: AnyObject, context: NSManagedObjectContext) -> [NSManagedObject] {
-        return self.query(condition, context: context, order: nil, limit: nil)
+        return self.query(condition, context: context, sort: nil, limit: nil)
     }
     
-    public static func query(condition: AnyObject, context: NSManagedObjectContext, order: AnyObject) -> [NSManagedObject] {
-        return self.query(condition, context: context, order: order, limit: nil)
+    public static func query(condition: AnyObject, context: NSManagedObjectContext, sort: AnyObject) -> [NSManagedObject] {
+        return self.query(condition, context: context, sort: sort, limit: nil)
     }
     
-    public static func query(condition: AnyObject, context: NSManagedObjectContext, order: AnyObject?, limit: Int?) -> [NSManagedObject] {
-        return self.fetch(condition, context: context, order: order, limit: limit)
+    public static func query(condition: AnyObject, context: NSManagedObjectContext, sort: AnyObject?, limit: Int?) -> [NSManagedObject] {
+        return self.fetch(condition, context: context, sort: sort, limit: limit)
     }
     
     // Aggregation
     
+    public static func count() -> Int {
+        return self.count(NSManagedObjectContext.defaultContext)
+    }
+    
+    public static func count(#query: AnyObject, args: AnyObject...) -> Int {
+        let predicate = self.predicate(query, args: args)
+        return self.count(query: predicate, context:NSManagedObjectContext.defaultContext)
+    }
+    
+    public static func count(context: NSManagedObjectContext) -> Int {
+        return self.countForFetch(nil, context: context)
+    }
+    
+    public static func count(#query: AnyObject, context: NSManagedObjectContext) -> Int {
+        return self.countForFetch(self.predicate(query), context: context)
+    }
     
     // Creation / Deletion
     public static func create() -> NSManagedObject {
@@ -424,14 +457,14 @@ public extension NSManagedObject {
         return request
     }
     
-    private static func fetch(condition: AnyObject?, context: NSManagedObjectContext, order: AnyObject?, limit: Int?) -> [NSManagedObject] {
+    private static func fetch(condition: AnyObject?, context: NSManagedObjectContext, sort: AnyObject?, limit: Int?) -> [NSManagedObject] {
         let request = self.createFetchRequest(context)
         
         if let cond: AnyObject = condition {
             request.predicate = self.predicate(cond)
         }
         
-        if let ord: AnyObject = order {
+        if let ord: AnyObject = sort {
             request.sortDescriptors = self.sortDescriptors(ord)
         }
         
@@ -440,6 +473,13 @@ public extension NSManagedObject {
         }
         
         return context.executeFetchRequest(request, error: nil) as! [NSManagedObject]
+    }
+    
+    private static func countForFetch(predicate: NSPredicate?, context: NSManagedObjectContext) -> Int {
+        let request = self.createFetchRequest(context)
+        request.predicate = predicate
+        
+        return context.countForFetchRequest(request, error: nil)
     }
     
     private static func count(predicate: NSPredicate, context: NSManagedObjectContext) -> Int {
@@ -509,8 +549,8 @@ public extension NSManagedObject {
 }
 
 public extension NSManagedObject {
-    public static func mappings() -> [String:AnyObject] {
-        return [String:AnyObject]()
+    public class func mappings() -> [String:String] {
+        return [String:String]()
     }
     
     public static func keyForRemoteKey(remote: String, context: NSManagedObjectContext) -> String {
@@ -538,9 +578,7 @@ public extension NSManagedObject {
         } else {
             var m = [String:String]()
             for (key, value) in mappings() {
-                if let s = value as? String {
-                    m[s] = key
-                }
+                m[value] = key
             }
             _cachedMappings = m
             return m
