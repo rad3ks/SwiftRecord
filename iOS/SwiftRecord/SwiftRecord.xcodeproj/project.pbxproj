@@ -10,7 +10,7 @@
 		B8E0EF371AFC345D00272D7E /* SwiftRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = B8E0EF361AFC345D00272D7E /* SwiftRecord.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B8E0EF3D1AFC345D00272D7E /* SwiftRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E0EF311AFC345D00272D7E /* SwiftRecord.framework */; };
 		B8E0EF441AFC345D00272D7E /* SwiftRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0EF431AFC345D00272D7E /* SwiftRecordTests.swift */; };
-		B8E0EF7C1AFC395300272D7E /* SwiftRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0EF7B1AFC395300272D7E /* SwiftRecord.swift */; };
+		B8E0EF801AFCA25F00272D7E /* SwiftRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0EF7F1AFCA25F00272D7E /* SwiftRecord.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +30,7 @@
 		B8E0EF3C1AFC345D00272D7E /* SwiftRecordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftRecordTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8E0EF421AFC345D00272D7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8E0EF431AFC345D00272D7E /* SwiftRecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftRecordTests.swift; sourceTree = "<group>"; };
-		B8E0EF7B1AFC395300272D7E /* SwiftRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftRecord.swift; path = ../../../Common/SwiftRecord.swift; sourceTree = "<group>"; };
+		B8E0EF7F1AFCA25F00272D7E /* SwiftRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftRecord.swift; path = ../../../SwiftRecord/SwiftRecord.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +73,7 @@
 		B8E0EF331AFC345D00272D7E /* SwiftRecord */ = {
 			isa = PBXGroup;
 			children = (
-				B8E0EF7B1AFC395300272D7E /* SwiftRecord.swift */,
+				B8E0EF7F1AFCA25F00272D7E /* SwiftRecord.swift */,
 				B8E0EF361AFC345D00272D7E /* SwiftRecord.h */,
 				B8E0EF341AFC345D00272D7E /* Supporting Files */,
 			);
@@ -212,7 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8E0EF7C1AFC395300272D7E /* SwiftRecord.swift in Sources */,
+				B8E0EF801AFCA25F00272D7E /* SwiftRecord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,7 +332,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SwiftRecord/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				INSTALL_PATH = "@executable_path/../Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -347,7 +347,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SwiftRecord/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				INSTALL_PATH = "@executable_path/../Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

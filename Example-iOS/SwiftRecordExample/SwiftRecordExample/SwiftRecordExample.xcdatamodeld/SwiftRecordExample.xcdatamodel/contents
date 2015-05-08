@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="TestEntity" representedClassName="SwiftRecordExample.TestEntity" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="float" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="integer" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="string" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TestEntityRelationship" inverseName="relationship" inverseEntity="TestEntityRelationship" syncable="YES"/>
+        <relationship name="relationships" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TestEntityRelationship" inverseName="relationships" inverseEntity="TestEntityRelationship" syncable="YES"/>
+    </entity>
+    <entity name="TestEntityRelationship" representedClassName="SwiftRecordExample.TestEntityRelationship" syncable="YES">
+        <attribute name="string" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TestEntity" inverseName="relationship" inverseEntity="TestEntity" syncable="YES"/>
+        <relationship name="relationships" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TestEntity" inverseName="relationships" inverseEntity="TestEntity" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="TestEntity" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="TestEntityRelationship" positionX="-54" positionY="18" width="128" height="90"/>
+    </elements>
+</model>

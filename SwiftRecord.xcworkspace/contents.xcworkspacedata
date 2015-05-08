@@ -2,8 +2,15 @@
 <Workspace
    version = "1.0">
    <Group
-      location = "group:Common"
-      name = "Common">
+      location = "group:Example-iOS"
+      name = "Example-iOS">
+      <FileRef
+         location = "group:SwiftRecordExample/SwiftRecordExample.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:SwiftRecord"
+      name = "SwiftRecord">
       <FileRef
          location = "group:SwiftRecord.swift">
       </FileRef>

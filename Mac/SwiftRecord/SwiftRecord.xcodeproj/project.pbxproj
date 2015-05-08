@@ -10,7 +10,7 @@
 		B8E0EF5D1AFC348500272D7E /* SwiftRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = B8E0EF5C1AFC348500272D7E /* SwiftRecord.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B8E0EF631AFC348500272D7E /* SwiftRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E0EF571AFC348500272D7E /* SwiftRecord.framework */; };
 		B8E0EF6A1AFC348500272D7E /* SwiftRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0EF691AFC348500272D7E /* SwiftRecordTests.swift */; };
-		B8E0EF7A1AFC394300272D7E /* SwiftRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0EF791AFC394300272D7E /* SwiftRecord.swift */; };
+		B8E0EF821AFCA26D00272D7E /* SwiftRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0EF811AFCA26D00272D7E /* SwiftRecord.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +30,7 @@
 		B8E0EF621AFC348500272D7E /* SwiftRecordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftRecordTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8E0EF681AFC348500272D7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8E0EF691AFC348500272D7E /* SwiftRecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftRecordTests.swift; sourceTree = "<group>"; };
-		B8E0EF791AFC394300272D7E /* SwiftRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftRecord.swift; path = ../../../Common/SwiftRecord.swift; sourceTree = "<group>"; };
+		B8E0EF811AFCA26D00272D7E /* SwiftRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftRecord.swift; path = ../../../SwiftRecord/SwiftRecord.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +73,7 @@
 		B8E0EF591AFC348500272D7E /* SwiftRecord */ = {
 			isa = PBXGroup;
 			children = (
-				B8E0EF791AFC394300272D7E /* SwiftRecord.swift */,
+				B8E0EF811AFCA26D00272D7E /* SwiftRecord.swift */,
 				B8E0EF5C1AFC348500272D7E /* SwiftRecord.h */,
 				B8E0EF5A1AFC348500272D7E /* Supporting Files */,
 			);
@@ -212,7 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8E0EF7A1AFC394300272D7E /* SwiftRecord.swift in Sources */,
+				B8E0EF821AFCA26D00272D7E /* SwiftRecord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
