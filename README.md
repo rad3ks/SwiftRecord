@@ -8,7 +8,15 @@ ActiveRecord style Core Data object management. Tremendously convenient and easy
 
 Written purely in Swift and based heavily on [ObjectiveRecord](https://github.com/supermarin/ObjectiveRecord)
 
-This library also reads in your json dictionaries for you. Includes automatic camelCase changing ie `first_name` from server to `firstName` locally. You can customize the dictionary mapping to, read the mapping section. Relationship objects are also generated, but disabled by default. Set `SwiftRecord.generateRelationships` to true to enable this feature
+Easy creates, saves, deletes and queries. Do it using:
+
+- `[String:AnyObject]` dictionaries for creates, queries or sorts
+- `String` for queries and sorts, ie `name == 'someName'` or `date ASC`
+- `NSPredicate` and `NSSortDescriptor`/`[NSSortDescriptor]` for queries and sorts if you'd like
+
+This library also reads in your json dictionaries for you. Includes automatic camelCase changing ie `first_name` from server to `firstName` locally. You can customize the dictionary mappings too. Read more in the [mapping section](#mapping). 
+
+Object relationships are also generated from dictionaries, but disabled by default. Set `SwiftRecord.generateRelationships` to true to enable this feature. See the [relationships](#relationships) section
 
 ## Installation
 
@@ -152,7 +160,7 @@ override class func mappings() -> [String:String] {
 @end
 ```
 
-### Relationship Generation
+### Relationships
 While it is advised against, you can have your NSManagedObject relationships in your dictionaries and they will be filled, but first you must enable it by setting:
 
 	SwiftRecord.generateRelationships = true
