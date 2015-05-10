@@ -1,7 +1,7 @@
 //
 //  SwiftRecord.swift
 //  
-//
+//  ark - http://www.arkverse.com
 //  Created by Zaid on 5/7/15.
 //
 //
@@ -10,10 +10,13 @@ import Foundation
 import CoreData
 
 public class SwiftRecord {
+    
     public static var generateRelationships = false
+    
     public static func setUpEntities(entities: [String:NSManagedObject.Type]) {
         nameToEntities = entities
     }
+    
     private static var nameToEntities: [String:NSManagedObject.Type] = [String:NSManagedObject.Type]()
 }
 

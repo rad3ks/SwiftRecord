@@ -16,6 +16,8 @@ This library also reads in your json dictionaries for you. Includes automatic ca
 
 Object relationships are also generated from dictionaries, but disabled by default. Set `SwiftRecord.generateRelationships` to true to enable this feature. See the [relationships section](#relationships)
 
+Visit arkverse for a more [beginner friendly guide to SwiftRecord](
+
 ## Installation
 
 #### via [CocoaPods](http://cocoapods.org)
@@ -54,7 +56,7 @@ Drag and drop either `Classes/SwiftRecord.swift` or `SwiftRecord.framework` into
 		@NSManaged var attendess: NSSet
 	}
 	```
-2. Set up Core Data by naming your model file `MyAppName.xcdatamodel` 
+2. Set up Core Data by naming your model file `MyAppName.xcdatamodel`. Optionally, you can set your own model name by calling `CoreDataManager.sharedManager.modelName = "mymodelname"`
 
 ### create, save & delete:
 
@@ -69,20 +71,22 @@ var properties: [String:AnyObject] = ["name":"productQA","type":"meeting", "when
 var meeting = Event.create(properties) as! Event // Remember to downcast
 ```
 
-Note: the downside to using swift is that `NSManagedObject` and `[NSManagedObject]`(arrays) are returned, so api calls have to down casted into your class type. Feel free to always force downcast. `MyObject` calls will always create `MyObject` unless your class could not be found
+Note: the downside to using swift is that `NSManagedObject` and `[NSManagedObject]`(arrays) are returned*, so api calls have to down casted into your class type. Feel free to always force downcast. `MyObject` calls will always create `MyObject` unless your class could not be found
+
+*`instancetype`, `Self` in Swift, has only just been added, and still pretty useless
 
 ### querying
 
-everything here is the same, except `where` are now `query` (where is a swift reserved keyword)
+Easily query against your entities. Queries accept optional condition, sort and limit parameters.
 
 ```swift
 // grab all Events
 var events = Event.all() as! [Event]
 
 // all past events before now
-var pastEvents = Event.query("when < \(NSDate().timeIntervalSince1970)") as! [Event]
+var pastEvents = Event.query("when < %@", NSDate()) as! [Event]
 
-// specific event, yes we still have support for objc formats. Note, finding specific events return optional vars
+// specific event, yes we have support for format&arguments. Note, finding specific events return optional vars
 var thisEvent = Event.find("name == %@ AND when == %@", "productQA", NSDate()) as? Event
 
 // Use dictionaries to query too
@@ -104,7 +108,7 @@ var descendingEvents = Event.all(sort:["when":"DESC"]) as! [Event]
 var descEvents = Event.all(sort:"when DESC, eventID ASC")
 
 // All meeting events sorted by when desc and eventID ascending and limit 10
-var theseEvents = Event.query(["type:"meeting"], sort:["when":"DESC","eventID":"ASC"], limit: 10) as! [Event]
+var theseEvents = Event.query(["type":"meeting"], sort:["when":"DESC","eventID":"ASC"], limit: 10) as! [Event]
 
 // NSSortDescriptor as sort arg (or array of NSSortDescriptors
 Event.all(sort: NSSortDescriptor(key:"when",ascending:true))
@@ -188,10 +192,14 @@ CoreDataManager.sharedManager.useInMemoryStore()
 #### Roadmap
 
 - improve Swiftiness
-- Swift memory mgmt
-- json generating
+- JSON generation
+- Possible add NSOrderedSet support in Relationship init
+- Support Realm
+- Better typing
 
 ## License
 
 SwiftRecord is available under the MIT license. See the LICENSE file
 for more information.
+
+Check out [ark](http://www.arkverse.com) for more about us

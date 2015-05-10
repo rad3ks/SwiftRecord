@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B88BC3721AFD15D900D3ECF7"
-               BuildableName = "SwiftRecordOSX.framework"
+               BuildableName = "SwiftRecord.framework"
                BlueprintName = "SwiftRecordOSX"
                ReferencedContainer = "container:SwiftRecord.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B88BC3721AFD15D900D3ECF7"
-            BuildableName = "SwiftRecordOSX.framework"
+            BuildableName = "SwiftRecord.framework"
             BlueprintName = "SwiftRecordOSX"
             ReferencedContainer = "container:SwiftRecord.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B88BC3721AFD15D900D3ECF7"
-            BuildableName = "SwiftRecordOSX.framework"
+            BuildableName = "SwiftRecord.framework"
             BlueprintName = "SwiftRecordOSX"
             ReferencedContainer = "container:SwiftRecord.xcodeproj">
          </BuildableReference>
@@ -94,7 +94,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B88BC3721AFD15D900D3ECF7"
-            BuildableName = "SwiftRecordOSX.framework"
+            BuildableName = "SwiftRecord.framework"
             BlueprintName = "SwiftRecordOSX"
             ReferencedContainer = "container:SwiftRecord.xcodeproj">
          </BuildableReference>
