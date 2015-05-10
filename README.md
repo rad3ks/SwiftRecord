@@ -16,7 +16,7 @@ This library also reads in your json dictionaries for you. Includes automatic ca
 
 Object relationships are also generated from dictionaries, but disabled by default. Set `SwiftRecord.generateRelationships` to true to enable this feature. See the [relationships section](#relationships)
 
-Visit arkverse for a more [beginner friendly guide to SwiftRecord](
+Visit arkverse for a more [beginner friendly guide to SwiftRecord](http://www.arkverse.com/swiftrecord-easy-core-data-written-in-swift/)
 
 ## Installation
 
