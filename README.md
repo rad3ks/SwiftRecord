@@ -20,6 +20,13 @@ Visit [ark](http://www.arkverse.com) for a more [beginner friendly guide to Swif
 
 [Check out our UIClosures library too](https://github.com/arkverse/UIClosures)
 
+if you love SwiftRecord, tweet it!
+<a href="https://twitter.com/intent/tweet?text=SwiftRecord%3A+an+amazing+swift+Core+Data+library&url=https%3A%2F%2Fgithub.com%2Farkverse%2FSwiftRecord&hashtags=ios%2Cswift%2Ccoredata&original_referer=http%3A%2F%2Fgithub.com%2F&tw_p=tweetbutton" target="_blank">
+  <img src="http://jpillora.com/github-twitter-button/img/tweet.png"
+       alt="tweet button" title="SwiftRecord: an amazing swift Core Data library"></img>
+</a>
+
+
 ## Installation
 
 #### via [CocoaPods](http://cocoapods.org)
@@ -205,3 +212,5 @@ SwiftRecord is available under the MIT license. See the LICENSE file
 for more information.
 
 Check out [ark](http://www.arkverse.com) for more about us
+
+![ga tracker](https://www.google-analytics.com/collect?v=1&a=257770996&t=pageview&dl=https%3A%2F%2Fgithub.com%2Farkverse%2FSwiftRecord&ul=en-us&de=UTF-8&cid=978224512.1377738459&tid=UA-63011921-1&z=887657232 "ga tracker")
