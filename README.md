@@ -1,6 +1,9 @@
 # SwiftRecord [![CocoaPod][pd-bdg]][pd] [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)[![Issues](http://img.shields.io/github/issues/arkverse/SwiftRecord.svg)]( https://github.com/arkverse/SwiftRecord/issues)
 [pd-bdg]: https://img.shields.io/cocoapods/v/SwiftRecord.svg
 [pd]: http://cocoadocs.org/docsets/SwiftRecord
+by [ark](http://www.arkverse.com). tweet [@arkverse](https://twitter.com/arkverse) for any feature requests. Feedback is greatly appreciated!
+
+##About
 
 ActiveRecord style Core Data object management. Tremendously convenient and easy to use. Necessary for any and every Core Data project.
 
