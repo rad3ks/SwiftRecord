@@ -100,17 +100,20 @@ typedef struct _NSZone NSZone;
 
 @interface NSManagedObject (SWIFT_EXTENSION(SwiftRecord))
 + (NSArray * __nonnull)all;
-+ (NSArray * __nonnull)allWithOrder:(id __nonnull)order;
++ (NSArray * __nonnull)allWithSort:(id __nonnull)sort;
 + (NSArray * __nonnull)allWithContext:(NSManagedObjectContext * __nonnull)context;
-+ (NSArray * __nonnull)allWithContext:(NSManagedObjectContext * __nonnull)context withOrder:(id __nullable)order;
++ (NSArray * __nonnull)allWithContext:(NSManagedObjectContext * __nonnull)context withSort:(id __nullable)sort;
 + (NSManagedObject * __nonnull)findOrCreate:(NSDictionary * __nonnull)properties;
 + (NSManagedObject * __nonnull)findOrCreate:(NSDictionary * __nonnull)properties context:(NSManagedObjectContext * __nonnull)context;
 + (NSManagedObject * __nullable)find:(id __nonnull)condition context:(NSManagedObjectContext * __nonnull)context;
-+ (NSArray * __nonnull)query:(id __nonnull)condition order:(id __nonnull)order;
++ (NSArray * __nonnull)query:(id __nonnull)condition sort:(id __nonnull)sort;
 + (NSArray * __nonnull)query:(id __nonnull)condition limit:(NSInteger)limit;
-+ (NSArray * __nonnull)query:(id __nonnull)condition order:(id __nonnull)order limit:(NSInteger)limit;
++ (NSArray * __nonnull)query:(id __nonnull)condition sort:(id __nonnull)sort limit:(NSInteger)limit;
 + (NSArray * __nonnull)query:(id __nonnull)condition context:(NSManagedObjectContext * __nonnull)context;
-+ (NSArray * __nonnull)query:(id __nonnull)condition context:(NSManagedObjectContext * __nonnull)context order:(id __nonnull)order;
++ (NSArray * __nonnull)query:(id __nonnull)condition context:(NSManagedObjectContext * __nonnull)context sort:(id __nonnull)sort;
++ (NSInteger)count;
++ (NSInteger)count:(NSManagedObjectContext * __nonnull)context;
++ (NSInteger)countWithQuery:(id __nonnull)query context:(NSManagedObjectContext * __nonnull)context;
 + (NSManagedObject * __nonnull)create;
 + (NSManagedObject * __nonnull)createWithContext:(NSManagedObjectContext * __nonnull)context;
 + (NSManagedObject * __nonnull)createWithProperties:(NSDictionary * __nonnull)properties;

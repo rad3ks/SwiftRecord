@@ -14,7 +14,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		jHlw5HwgSinuW8bwtIg/LIJG9dc=
+		h43mRo+fxuM1Hs1f7zy0T05R0Rs=
+		</data>
+		<key>Modules/SwiftRecord.swiftmodule/arm.swiftdoc</key>
+		<data>
+		5OaGO9pjCn3LTb2Waz7zfaVanSk=
+		</data>
+		<key>Modules/SwiftRecord.swiftmodule/arm.swiftmodule</key>
+		<data>
+		RgX7steTyq34s80fDhLlrRFiDbo=
 		</data>
 		<key>Modules/SwiftRecord.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -38,6 +46,14 @@
 		<key>Headers/SwiftRecord.h</key>
 		<data>
 		bd3pu6kjebqsTn5tGNq93yNKODc=
+		</data>
+		<key>Modules/SwiftRecord.swiftmodule/arm.swiftdoc</key>
+		<data>
+		5OaGO9pjCn3LTb2Waz7zfaVanSk=
+		</data>
+		<key>Modules/SwiftRecord.swiftmodule/arm.swiftmodule</key>
+		<data>
+		RgX7steTyq34s80fDhLlrRFiDbo=
 		</data>
 		<key>Modules/SwiftRecord.swiftmodule/arm64.swiftdoc</key>
 		<data>

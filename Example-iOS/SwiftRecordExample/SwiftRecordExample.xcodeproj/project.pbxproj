@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B88BC36C1AFD092700D3ECF7 /* SwiftRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B88BC36B1AFD092700D3ECF7 /* SwiftRecord.framework */; };
-		B88BC36D1AFD092700D3ECF7 /* SwiftRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B88BC36B1AFD092700D3ECF7 /* SwiftRecord.framework */; };
+		B86E043D1B0D84D0004DECF0 /* SwiftRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B86E043C1B0D84D0004DECF0 /* SwiftRecord.framework */; };
 		B8E0EFC31AFCA69600272D7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0EFC21AFCA69600272D7E /* AppDelegate.swift */; };
 		B8E0EFC61AFCA69600272D7E /* SwiftRecordExample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B8E0EFC41AFCA69600272D7E /* SwiftRecordExample.xcdatamodeld */; };
 		B8E0EFC81AFCA69600272D7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0EFC71AFCA69600272D7E /* ViewController.swift */; };
@@ -43,7 +42,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B88BC36B1AFD092700D3ECF7 /* SwiftRecord.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftRecord.framework; path = ../../../SwiftRecord.framework; sourceTree = "<group>"; };
+		B86E043C1B0D84D0004DECF0 /* SwiftRecord.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftRecord.framework; sourceTree = "<group>"; };
 		B8E0EFBD1AFCA69600272D7E /* SwiftRecordExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftRecordExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8E0EFC11AFCA69600272D7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8E0EFC21AFCA69600272D7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B88BC36C1AFD092700D3ECF7 /* SwiftRecord.framework in Frameworks */,
+				B86E043D1B0D84D0004DECF0 /* SwiftRecord.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,7 +75,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B88BC36D1AFD092700D3ECF7 /* SwiftRecord.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,7 +104,7 @@
 		B8E0EFBF1AFCA69600272D7E /* SwiftRecordExample */ = {
 			isa = PBXGroup;
 			children = (
-				B88BC36B1AFD092700D3ECF7 /* SwiftRecord.framework */,
+				B86E043C1B0D84D0004DECF0 /* SwiftRecord.framework */,
 				B8E0EFC21AFCA69600272D7E /* AppDelegate.swift */,
 				B8E0EFC71AFCA69600272D7E /* ViewController.swift */,
 				B8E0EFC91AFCA69600272D7E /* Main.storyboard */,

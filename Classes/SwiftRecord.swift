@@ -303,7 +303,6 @@ public extension NSManagedObject {
     
     public static func entityName() -> String {
         var name = NSStringFromClass(self)
-        println(name)
         if name.rangeOfString(".") != nil {
             let comp = split(name) {$0 == "."}
             if comp.count > 1 {
@@ -325,7 +324,6 @@ public extension NSManagedObject {
                 name = "_".join(comp)
             }
         }
-        println("fixed name: " + name)
         return name
     }
     

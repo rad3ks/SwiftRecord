@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/SwiftRecord-Swift.h</key>
 		<data>
-		8W+uH8sno8AWOv9C/jjCtGfu2kA=
+		JyplSQLMsuca1vdeE6Cu3RTZ8To=
 		</data>
 		<key>Headers/SwiftRecord.h</key>
 		<data>
@@ -14,7 +14,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		jHlw5HwgSinuW8bwtIg/LIJG9dc=
+		h43mRo+fxuM1Hs1f7zy0T05R0Rs=
+		</data>
+		<key>Modules/SwiftRecord.swiftmodule/arm.swiftdoc</key>
+		<data>
+		5OaGO9pjCn3LTb2Waz7zfaVanSk=
+		</data>
+		<key>Modules/SwiftRecord.swiftmodule/arm.swiftmodule</key>
+		<data>
+		RgX7steTyq34s80fDhLlrRFiDbo=
 		</data>
 		<key>Modules/SwiftRecord.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -22,7 +30,7 @@
 		</data>
 		<key>Modules/SwiftRecord.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		wgpYdYNGyO/9tCWphTooARJv/L4=
+		CdYJcF4jGwi+pk4qf/4+izB1uGw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -33,11 +41,19 @@
 	<dict>
 		<key>Headers/SwiftRecord-Swift.h</key>
 		<data>
-		8W+uH8sno8AWOv9C/jjCtGfu2kA=
+		JyplSQLMsuca1vdeE6Cu3RTZ8To=
 		</data>
 		<key>Headers/SwiftRecord.h</key>
 		<data>
 		bd3pu6kjebqsTn5tGNq93yNKODc=
+		</data>
+		<key>Modules/SwiftRecord.swiftmodule/arm.swiftdoc</key>
+		<data>
+		5OaGO9pjCn3LTb2Waz7zfaVanSk=
+		</data>
+		<key>Modules/SwiftRecord.swiftmodule/arm.swiftmodule</key>
+		<data>
+		RgX7steTyq34s80fDhLlrRFiDbo=
 		</data>
 		<key>Modules/SwiftRecord.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -45,7 +61,7 @@
 		</data>
 		<key>Modules/SwiftRecord.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		wgpYdYNGyO/9tCWphTooARJv/L4=
+		CdYJcF4jGwi+pk4qf/4+izB1uGw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
