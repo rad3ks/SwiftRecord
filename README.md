@@ -15,6 +15,8 @@ Easy creates, saves, deletes and queries. Do it using:
 - `String` for queries and sorts, ie `name == 'someName'` or `date ASC`
 - `NSPredicate` and `NSSortDescriptor`/`[NSSortDescriptor]` for queries and sorts if you'd like
 
+Now supports setting an autoincrementing ID for your `NSManagedObject` subclasses
+
 This library also reads in your json dictionaries for you. Includes automatic camelCase changing ie `first_name` from server to `firstName` locally. You can customize the dictionary mappings too. Read more in the [mapping section](#mapping). 
 
 Object relationships are also generated from dictionaries, but disabled by default. Set `SwiftRecord.generateRelationships` to true to enable this feature. See the [relationships section](#relationships)
@@ -29,6 +31,17 @@ if you love SwiftRecord, tweet it!
        alt="tweet button" title="SwiftRecord: an amazing swift Core Data library"></img>
 </a>
 
+## Table of Contents
+
+1. [Installation](#installation)
+2. [Creates, Saves, Deletes](#create, save & delete:)
+3. [querying](#querying)
+4. [sorting, limites](#sorting, limits)
+5. [aggregation](#aggregation)
+6. [custom coredata](#custom core data)
+7. [mapping](#mapping)
+8. [relationships](#relationships)
+9. [autoincrement](#autoincrement)
 
 ## Installation
 
@@ -193,6 +206,18 @@ var event = Event.create(eventDict) as! Event
 var person: Person = event.creator
 println(person.username)
 ```
+
+### Autoincrement
+If you would like SwiftRecord to manage autoincrementing your ID property for you, enable it just by override autoIncrementingId() and return the key for your ID property:
+
+```swift
+public class Event: NSManagedObject {
+
+   override public static func autoIncrementingId() -> String? {
+       return "eventId"
+   }
+```
+Note, this will set your ID property whenever one isn't provided. You will have duplicate ID's if you set your own objects id. For example, autoincrement is at ID 150 and you create an object with ID 200, autoincrement will eventually create an object with ID 200 as well. Enforcing uniqueness in Core Data is too expensive.
 
 #### Testing
 
