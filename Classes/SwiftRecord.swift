@@ -324,7 +324,7 @@ public extension NSManagedObject {
         }
     }
     
-    public static func autoIncrementingId() -> String? {
+    public class func autoIncrementingId() -> String? {
         return nil
     }
     

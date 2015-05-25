@@ -213,7 +213,7 @@ If you would like SwiftRecord to manage autoincrementing your ID property for yo
 ```swift
 public class Event: NSManagedObject {
 
-   override public static func autoIncrementingId() -> String? {
+   override public func autoIncrementingId() -> String? {
        return "eventId"
    }
 ```
