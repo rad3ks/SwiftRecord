@@ -256,7 +256,11 @@ public extension NSManagedObject {
     }
     
     public static func create(#context: NSManagedObjectContext) -> NSManagedObject {
-        return NSEntityDescription.insertNewObjectForEntityForName(self.entityName(), inManagedObjectContext: context) as! NSManagedObject
+        let o = NSEntityDescription.insertNewObjectForEntityForName(self.entityName(), inManagedObjectContext: context) as! NSManagedObject
+        if let idprop = self.autoIncrementingId() {
+            o.setPrimitiveValue(NSNumber(integer: self.nextId()), forKey: idprop)
+        }
+        return o
     }
     
     public static func create(#properties: [String:AnyObject]) -> NSManagedObject {
@@ -266,7 +270,26 @@ public extension NSManagedObject {
     public static func create(properties: [String:AnyObject], context: NSManagedObjectContext) -> NSManagedObject {
         let newEntity: NSManagedObject = self.create(context: context)
         newEntity.update(properties)
+        if let idprop = self.autoIncrementingId() {
+            if newEntity.primitiveValueForKey(idprop) == nil {
+                newEntity.setPrimitiveValue(NSNumber(integer: self.nextId()), forKey: idprop)
+            }
+        }
         return newEntity
+    }
+    
+    public static func autoIncrements() -> Bool {
+        return self.autoIncrementingId() != nil
+    }
+    
+    public static func nextId() -> Int {
+        let key = "SwiftRecord-" + self.entityName() + "-ID"
+        if let idprop = self.autoIncrementingId() {
+            let id = NSUserDefaults.standardUserDefaults().integerForKey(key)
+            NSUserDefaults.standardUserDefaults().setInteger(id + 1, forKey: key)
+            return id
+        }
+        return 0
     }
     
     public func update(properties: [String:AnyObject]) {
@@ -299,6 +322,10 @@ public extension NSManagedObject {
         for o in self.all(context: context) {
             o.delete()
         }
+    }
+    
+    public static func autoIncrementingId() -> String? {
+        return nil
     }
     
     public static func entityName() -> String {
