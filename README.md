@@ -51,7 +51,7 @@ if you love SwiftRecord, tweet it!
 		platform :ios, '8.0'
 		use_frameworks!
 	
-		pod 'SwiftRecord', '~> 0.0.1'
+		pod 'SwiftRecord'
 2. run `pod install`
 
 #### via Carthage
