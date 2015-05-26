@@ -34,9 +34,9 @@ if you love SwiftRecord, tweet it!
 ## Table of Contents
 
 1. [Installation](#installation)
-2. [Creates, Saves, Deletes](#create, save & delete:)
+2. [Creates, Saves, Deletes](#create,)
 3. [querying](#querying)
-4. [sorting, limites](#sorting, limits)
+4. [sorting, limits](#sorting, limits)
 5. [aggregation](#aggregation)
 6. [custom coredata](#custom core data)
 7. [mapping](#mapping)
